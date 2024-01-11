@@ -1,0 +1,24 @@
+import { usersModel } from "../db/models/users.model.js";
+
+class UsersManager {
+  async findById(id) {
+    const response = await usersModel.findById(id);
+    return response;
+  }
+
+  async findByEmail(email) {
+    const response = await usersModel.findOne({ email });
+    return response;
+  }
+
+  async createOne(obj) {
+    const response = await usersModel.create(obj);
+    return response;
+  }
+  
+  async findUserByCart(cart){        
+    return await usersModel.findOne({cart})                                       
+}
+}
+
+export const usersManager = new UsersManager();

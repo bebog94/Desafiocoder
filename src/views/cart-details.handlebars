@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <ul>
+        {{#each products}}
+            <li>
+                {{this.product.title}}
+                <strong>{{{this.quantity}}}</strong>
+                <br>
+                <button onclick="quitarDelCarrito('{{this.product._id}}')">Quitar del Carrito</button>
+            </li>
+        {{/each}}
+    </ul>
+</body>
+</html>

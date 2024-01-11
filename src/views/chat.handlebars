@@ -1,0 +1,13 @@
+<h3>CHAT</h3>
+<h4 id="user"></h4>
+<form id="chatForm" action="/api/messages" method="POST">
+    <input type="text" name="user" id="user" value="{{user}}" style="display: none;"> <!-- Agrega el campo name oculto con el valor del usuario -->
+    <input type="text" name="message" id="message">
+    <input type="submit" value="SEND">
+</form>
+
+<div id="chat"></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>

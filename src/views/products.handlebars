@@ -1,0 +1,30 @@
+<h2>Productos</h2>
+
+<div class="container-xl">
+    <div class="row">
+        {{#each products.payload}}
+        <div class="col-sm-3">
+            <div class="card">
+                <img src="/examples/images/products/product-image.jpg" class="card-img-top" alt="{{title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">Precio: ${{price}}</p>
+                    <p class="card-text">Descripción: {{description}}</p>
+                    <p class="card-text">Código: {{code}}</p>
+                    <p class="card-text">Estado: {{#if status}}Disponible{{else}}No disponible{{/if}}</p>
+                    <p class="card-text">Stock: {{stock}}</p>
+                    <p class="card-text">Categoría: {{category}}</p>
+                    <button class="btn btn-primary add-to-cart" data-product-id="{{_id}}">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+{{#if products.hasPrevPage}}
+<a href="{{products.prevLink}}" class="btn btn-primary">Página Anterior</a>
+{{/if}}
+{{#if products.hasNextPage}}
+<a href="{{products.nextLink}}" class="btn btn-primary">Página Siguiente</a>
+{{/if}}
